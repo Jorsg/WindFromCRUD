@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2017\enterprise\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="15.0">
+ <Targets>
+  <Target Name="G:\Clientes\Climbox\Climbox\Climbox\bin\Debug\Climbox.exe">
+   <Modules>
+    <Module Name="climbox.exe">
+     <Namespaces>
+      <Namespace Name="Climbox">
+       <Types>
+        <Type Name="Movimientos" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Dispose(System.Boolean)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message Id="repoMovi" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2020-12-07 11:57:51Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="G:\Clientes\Climbox\Climbox\Climbox" File="Movimientos.Designer.cs" Line="15">'Movimientos' contiene el campo 'Movimientos.repoMovi' que es de tipo IDisposable: 'Reportes'. Cambie el método Dispose en 'Movimientos' para que llame a Dispose o Close en este campo.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="PagoClientes" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Dispose(System.Boolean)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message Id="reader" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2020-12-07 11:57:51Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="G:\Clientes\Climbox\Climbox\Climbox" File="PagoClientes.Designer.cs" Line="15">'PagoClientes' contiene el campo 'PagoClientes.reader' que es de tipo IDisposable: 'StreamReader'. Cambie el método Dispose en 'PagoClientes' para que llame a Dispose o Close en este campo.</Issue>
+            </Message>
+            <Message Id="repoPago" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2020-12-07 11:57:51Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="G:\Clientes\Climbox\Climbox\Climbox" File="PagoClientes.Designer.cs" Line="15">'PagoClientes' contiene el campo 'PagoClientes.repoPago' que es de tipo IDisposable: 'Pagos'. Cambie el método Dispose en 'PagoClientes' para que llame a Dispose o Close en este campo.</Issue>
+            </Message>
+            <Message Id="repousuar" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2020-12-07 11:57:51Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="G:\Clientes\Climbox\Climbox\Climbox" File="PagoClientes.Designer.cs" Line="15">'PagoClientes' contiene el campo 'PagoClientes.repousuar' que es de tipo IDisposable: 'Usuario'. Cambie el método Dispose en 'PagoClientes' para que llame a Dispose o Close en este campo.</Issue>
+            </Message>
+            <Message Id="respoVwPa" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2020-12-07 11:57:51Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="G:\Clientes\Climbox\Climbox\Climbox" File="PagoClientes.Designer.cs" Line="15">'PagoClientes' contiene el campo 'PagoClientes.respoVwPa' que es de tipo IDisposable: 'PagoUsuario'. Cambie el método Dispose en 'PagoClientes' para que llame a Dispose o Close en este campo.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Registro" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#Dispose(System.Boolean)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message Id="repoUsuario" TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213" Status="Active" Created="2020-12-07 11:57:51Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="G:\Clientes\Climbox\Climbox\Climbox" File="Registro.Designer.cs" Line="15">'Registro' contiene el campo 'Registro.repoUsuario' que es de tipo IDisposable: 'Usuario'. Cambie el método Dispose en 'Registro' para que llame a Dispose o Close en este campo.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="DisposableFieldsShouldBeDisposed" Category="Microsoft.Usage" CheckId="CA2213">
+   <Name>Aplique Dispose a los campos a los que se pueda</Name>
+   <Description>Si un tipo que implementa IDisposable posee campos que también implementan IDisposable, la implementación de Dispose() de los tipos encapsuladores debe llamar a Dispose() en todos los campos disponibles.</Description>
+   <Resolution Name="Default">{0} contiene el campo {1} que es de tipo IDisposable: {2}. Cambie el método Dispose en {0} para que llame a Dispose o Close en este campo.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182328.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="usagerules.dll" Version="15.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Categoría</String>
+  <String Key="Certainty">Certeza</String>
+  <String Key="CollapseAll">Contraer todo</String>
+  <String Key="CheckId">Comprobar id.</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">errores</String>
+  <String Key="ExpandAll">Expandir todo</String>
+  <String Key="Help">Ayuda</String>
+  <String Key="Line">Línea</String>
+  <String Key="Messages">mensajes</String>
+  <String Key="LocationNotStoredInPdb">[Ubicación no almacenada en Pdb]</String>
+  <String Key="Project">Proyecto</String>
+  <String Key="Resolution">Resolución</String>
+  <String Key="Rule">Regla</String>
+  <String Key="RuleFile">Archivo de regla</String>
+  <String Key="RuleDescription">Descripción de la regla</String>
+  <String Key="Source">Origen</String>
+  <String Key="Status">Estado</String>
+  <String Key="Target">Círculos concéntricos</String>
+  <String Key="Warning">Advertencia</String>
+  <String Key="Warnings">advertencias</String>
+  <String Key="ReportTitle">Informe de análisis del código</String>
+ </Localized>
+</FxCopReport>

@@ -1,0 +1,11 @@
+G:\Clientes\Climbox\Climbox\Climbox.Dominio\bin\Release\Climbox.Dominio.dll.config
+G:\Clientes\Climbox\Climbox\Climbox.Dominio\bin\Release\Climbox.Dominio.dll
+G:\Clientes\Climbox\Climbox\Climbox.Dominio\bin\Release\Climbox.Dominio.pdb
+G:\Clientes\Climbox\Climbox\Climbox.Dominio\bin\Release\EntityFramework.dll
+G:\Clientes\Climbox\Climbox\Climbox.Dominio\bin\Release\EntityFramework.SqlServer.dll
+G:\Clientes\Climbox\Climbox\Climbox.Dominio\bin\Release\EntityFramework.xml
+G:\Clientes\Climbox\Climbox\Climbox.Dominio\bin\Release\EntityFramework.SqlServer.xml
+G:\Clientes\Climbox\Climbox\Climbox.Dominio\obj\Release\Climbox.Dominio.csproj.CoreCompileInputs.cache
+G:\Clientes\Climbox\Climbox\Climbox.Dominio\obj\Release\Climbox.Dominio.csproj.CopyComplete
+G:\Clientes\Climbox\Climbox\Climbox.Dominio\obj\Release\Climbox.Dominio.dll
+G:\Clientes\Climbox\Climbox\Climbox.Dominio\obj\Release\Climbox.Dominio.pdb

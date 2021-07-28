@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Climbox", "Climbox\Climbox.csproj", "{A7A9B344-2EE1-43AC-B428-591EB529E8F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Climbox.Dominio", "Climbox.Dominio\Climbox.Dominio.csproj", "{FAC5B3F9-D475-4530-BB26-81F7DA406D8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Climbox.Repositorio", "Climbox.Repositorio\Climbox.Repositorio.csproj", "{C0980AAC-B722-411E-865D-0AC8D5267656}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupClimbox", "SetupClimbox\SetupClimbox.vdproj", "{9AED55D0-9FBD-47FA-8722-1056A57CC19A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7A9B344-2EE1-43AC-B428-591EB529E8F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7A9B344-2EE1-43AC-B428-591EB529E8F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7A9B344-2EE1-43AC-B428-591EB529E8F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7A9B344-2EE1-43AC-B428-591EB529E8F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAC5B3F9-D475-4530-BB26-81F7DA406D8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAC5B3F9-D475-4530-BB26-81F7DA406D8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAC5B3F9-D475-4530-BB26-81F7DA406D8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAC5B3F9-D475-4530-BB26-81F7DA406D8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0980AAC-B722-411E-865D-0AC8D5267656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0980AAC-B722-411E-865D-0AC8D5267656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0980AAC-B722-411E-865D-0AC8D5267656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0980AAC-B722-411E-865D-0AC8D5267656}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AED55D0-9FBD-47FA-8722-1056A57CC19A}.Debug|Any CPU.ActiveCfg = Debug
+		{9AED55D0-9FBD-47FA-8722-1056A57CC19A}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA79B2EC-9595-4151-8654-C46192A72FC7}
+	EndGlobalSection
+EndGlobal

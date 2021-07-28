@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ClimboxModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Configuracion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DireccionGym" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TelefonoGym" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NombreGym" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HistoricoPago">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaPago" Type="datetime" Nullable="false" />
+    <Property Name="FechaVencimiento" Type="datetime" Nullable="false" />
+    <Property Name="FechaModifica" Type="datetime" />
+    <Property Name="IdUsuarioModifica" Type="int" />
+    <Property Name="IdPago" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pagos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="Valor" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Descripción" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="IdTipoFormaPago" Type="int" Nullable="false" />
+    <Property Name="FechaPago" Type="datetime" Nullable="false" />
+    <Property Name="IdImpuestos" Type="int" />
+    <Property Name="IdTipoServicio" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TipoFormaPago">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoServicio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoUsuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Identificacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Telefono" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+    <Property Name="Sexo" Type="varchar" MaxLength="10" />
+    <Property Name="FechaCumpleanos" Type="datetime" />
+    <Property Name="Eps" Type="varchar" MaxLength="50" />
+    <Property Name="PersonaContactoEmerge" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TelefonPersoEmergenc" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Profesion" Type="varchar" MaxLength="50" />
+    <Property Name="IdTipoUsuario" Type="int" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+    <Property Name="FechaModificacion" Type="datetime" Nullable="false" />
+    <Property Name="UsuarioCrea" Type="varchar" MaxLength="50" />
+    <Property Name="UsuarioModifica" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Climbox.dbo.Vw_Movimientos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Vw_Movimientos">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="Nombre" />
+      <PropertyRef Name="Apellido" />
+      <PropertyRef Name="Identificacion" />
+      <PropertyRef Name="Valor" />
+      <PropertyRef Name="Mensualidad" />
+      <PropertyRef Name="Cantidad" />
+      <PropertyRef Name="FechaPago" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="TipoPago" />
+      <PropertyRef Name="Servicio" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Identificacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Valor" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Mensualidad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="FechaPago" Type="datetime" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="TipoPago" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Servicio" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Climbox.dbo.Vw_PagoUsuario' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Vw_PagoUsuario">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="Nombre" />
+      <PropertyRef Name="Apellido" />
+      <PropertyRef Name="Identificacion" />
+      <PropertyRef Name="Valor" />
+      <PropertyRef Name="Descripción" />
+      <PropertyRef Name="Cantidad" />
+      <PropertyRef Name="FechaPago" />
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Identificacion" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Valor" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Descripción" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="FechaPago" Type="datetime" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Pagos_TipoFormaPago">
+    <End Role="TipoFormaPago" Type="Self.TipoFormaPago" Multiplicity="1" />
+    <End Role="Pagos" Type="Self.Pagos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoFormaPago">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pagos">
+        <PropertyRef Name="IdTipoFormaPago" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pagos_TipoServicio">
+    <End Role="TipoServicio" Type="Self.TipoServicio" Multiplicity="1" />
+    <End Role="Pagos" Type="Self.Pagos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoServicio">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pagos">
+        <PropertyRef Name="IdTipoServicio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pagos_Usuarios">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Pagos" Type="Self.Pagos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pagos">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_TipoUsuario">
+    <End Role="TipoUsuario" Type="Self.TipoUsuario" Multiplicity="1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoUsuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="IdTipoUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ClimboxModelStoreContainer">
+    <EntitySet Name="Configuracion" EntityType="Self.Configuracion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HistoricoPago" EntityType="Self.HistoricoPago" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pagos" EntityType="Self.Pagos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoFormaPago" EntityType="Self.TipoFormaPago" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoServicio" EntityType="Self.TipoServicio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoUsuario" EntityType="Self.TipoUsuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vw_Movimientos" EntityType="Self.Vw_Movimientos" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_Movimientos].[id] AS [id], 
+    [Vw_Movimientos].[Nombre] AS [Nombre], 
+    [Vw_Movimientos].[Apellido] AS [Apellido], 
+    [Vw_Movimientos].[Identificacion] AS [Identificacion], 
+    [Vw_Movimientos].[Valor] AS [Valor], 
+    [Vw_Movimientos].[Mensualidad] AS [Mensualidad], 
+    [Vw_Movimientos].[Cantidad] AS [Cantidad], 
+    [Vw_Movimientos].[FechaPago] AS [FechaPago], 
+    [Vw_Movimientos].[Email] AS [Email], 
+    [Vw_Movimientos].[TipoPago] AS [TipoPago], 
+    [Vw_Movimientos].[Servicio] AS [Servicio]
+    FROM [dbo].[Vw_Movimientos] AS [Vw_Movimientos]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Vw_PagoUsuario" EntityType="Self.Vw_PagoUsuario" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Vw_PagoUsuario].[id] AS [id], 
+    [Vw_PagoUsuario].[Nombre] AS [Nombre], 
+    [Vw_PagoUsuario].[Apellido] AS [Apellido], 
+    [Vw_PagoUsuario].[Identificacion] AS [Identificacion], 
+    [Vw_PagoUsuario].[Valor] AS [Valor], 
+    [Vw_PagoUsuario].[Descripción] AS [Descripción], 
+    [Vw_PagoUsuario].[Cantidad] AS [Cantidad], 
+    [Vw_PagoUsuario].[FechaPago] AS [FechaPago], 
+    [Vw_PagoUsuario].[Email] AS [Email]
+    FROM [dbo].[Vw_PagoUsuario] AS [Vw_PagoUsuario]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Pagos_TipoFormaPago" Association="Self.FK_Pagos_TipoFormaPago">
+      <End Role="TipoFormaPago" EntitySet="TipoFormaPago" />
+      <End Role="Pagos" EntitySet="Pagos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pagos_TipoServicio" Association="Self.FK_Pagos_TipoServicio">
+      <End Role="TipoServicio" EntitySet="TipoServicio" />
+      <End Role="Pagos" EntitySet="Pagos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pagos_Usuarios" Association="Self.FK_Pagos_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Pagos" EntitySet="Pagos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_TipoUsuario" Association="Self.FK_Usuarios_TipoUsuario">
+      <End Role="TipoUsuario" EntitySet="TipoUsuario" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
